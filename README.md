@@ -5,7 +5,7 @@ A novel automatic evaluation metric for Machine Translation based on word embedd
 STR measures the semantic similarity between the hypothesis and references by calculating the minimum amount of distance that the embedded words of hypothesis need to “travel” to reach the embedded words of references. We support the evaluation for both to-English and to-Chinese machine translation.
 
 ## Dependencies
-python 3.6.5
+python 3.6.5     
 pyemd, numpy, gensim, sklearn, nltk, jieba, codecs, re
 
 ## Pretrained word2vec model used in this algorithm 
