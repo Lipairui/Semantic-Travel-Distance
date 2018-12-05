@@ -16,8 +16,8 @@ https://drive.google.com/uc?id=0B7XkCwpI5KDYNlNUTTlSS21pQmM&export=download
 
 ## Example usage
 Code:
-
-   refs = ['man sitting using tool at a table in his home.',
+    # Example usage
+    refs = ['man sitting using tool at a table in his home.',
                  'vegetable is being sliced.',
                 'a speaker presents some products']
     hyps = ['The president comes to China',
