@@ -32,16 +32,17 @@ Code:
         print("STR score: %.3f" %sent_STR)   
     print("Corpus STR score: %.3f" %corpus_STR)
  
-Result:       
-Reference: man sitting using tool at a table in his home.        
-Hypothesis: The president comes to China       
-STR score: 0.674      
-Reference: vegetable is being sliced.       
-Hypothesis: someone is slicing a tomato with a knife on a cutting board.      
-STR score: 0.814      
-Reference: a speaker presents some products       
-Hypothesis: the speaker is introducing the new products on a fair.       
-STR score: 0.788     
-Corpus STR score: 0.758
+Result:      
+
+    Reference: man sitting using tool at a table in his home.        
+    Hypothesis: The president comes to China       
+    STR score: 0.674      
+    Reference: vegetable is being sliced.       
+    Hypothesis: someone is slicing a tomato with a knife on a cutting board.      
+    STR score: 0.814      
+    Reference: a speaker presents some products       
+    Hypothesis: the speaker is introducing the new products on a fair.       
+    STR score: 0.788     
+    Corpus STR score: 0.758
  
     
