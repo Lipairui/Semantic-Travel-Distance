@@ -215,12 +215,10 @@ def STD_ngram(w2v_model,refs,hyps,n_gram,args):
         calculate segment-level and system-level STD score of n_gram
     Input: 
         w2v_model: gensim format model
-        lang: text language - 'cn' for Chinese/'en' for English
-        refs:  list of reference documents 
+        refs: list of reference documents 
         hyps: list of hypothesis documents
         n_gram: number of grams
-        beta1: weight of semantic distance matrix 
-        beta2: weight of n-gram order distance matrix 
+        args: input arguments
     Output:
         seg_STDs (segment-level STD score): list of STD scores for each translation (ref-hyp pair) 
         sys_STD (system-level STD score): average STD score for the whole corpus
@@ -282,14 +280,9 @@ def STD(w2v_model,refs,hyps,args):
     Input: 
         w2v_model: gensim format model
         lang: text language - 'cn' for Chinese/'en' for English
-        refs:  list of reference documents 
+        refs: list of reference documents 
         hyps: list of hypothesis documents
-        alpha1: weight of unigram STD score at segment level
-        alpha2: weight of bigram STD score at segment level
-        alpha3: weight of unigram STD score at syetem level
-        alpha4: weight of bigram STD score at system level
-        beta1: weight of semantic distance matrix 
-        beta2: weight of n-gram order distance matrix 
+        args: input arguments
     Output:
         seg_STDs (segment-level STD score): list of STD scores for each translation (ref-hyp pair) 
         sys_STD (system-level STD score): average STD score for the whole corpus
