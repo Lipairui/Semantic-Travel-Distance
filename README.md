@@ -1,48 +1,47 @@
-# Semantic Travel Rate (STR)
+# Semantic Travel Distance (STD)
 A novel automatic evaluation metric for Machine Translation based on word embeddings. 
 
 ## Algorithm description
-STR measures the semantic similarity between the hypothesis and references by calculating the minimum amount of distance that the embedded words of hypothesis need to “travel” to reach the embedded words of references. We support the evaluation for both to-English and to-Chinese machine translation.
+STD incorporates both semantic and lexical features (word embeddings & n-gram & word order) into one metric. It measures the semantic distance between the hypothesis and reference by calculating the minimum cumulative cost that the embedded n-grams of the hypothesis need to “travel” to reach the embedded n-grams of the reference. Experiment results show that STD has a better and more robust performance than a range of state-of-the-art metrics for both the segment-level and system-level evaluation.
 
 ## Dependencies
 python 3.6.5     
 pyemd, numpy, gensim, sklearn, nltk, jieba, codecs, re
 
-## Pretrained word2vec model used in this algorithm 
-Chinese word2vec CBOW: utf8 2.18G     
+## Pretrained word embeddings model used in this algorithm 
+Chinese pretrained model:      
 http://pan.baidu.com/s/1qX334vE      
-English word2vec 1.5G          
-https://drive.google.com/uc?id=0B7XkCwpI5KDYNlNUTTlSS21pQmM&export=download
+English pretrained model:         
+https://dl.fbaipublicfiles.com/fasttext/vectors-english/crawl-300d-2M.vec.zip
 
-## Example usage
-Code:
+## Usage
+1. Set pretrained word embeddings model path in config.py
+2. STD.py [-h] -r REF -o HYP -l LANG [-a1 ALPHA1] [-a2 ALPHA2]
+              [-a3 ALPHA3] [-a4 ALPHA4] [-b1 BETA1] [-b2 BETA2] [-v]
 
-    # Example usage
-    refs = ['man sitting using tool at a table in his home.',
-                 'vegetable is being sliced.',
-                'a speaker presents some products']
-    hyps = ['The president comes to China',
-                'someone is slicing a tomato with a knife on a cutting board.',
-                'the speaker is introducing the new products on a fair.']
-    lang = 'en'
-    sent_STRs, corpus_STR = STR(lang,refs,hyps)
-    for i,sent_STR in enumerate(sent_STRs):
-        print("Reference: %s" %refs[i])
-        print("Hypothesis: %s" %hyps[i])
-        print("STR score: %.3f" %sent_STR)   
-    print("Corpus STR score: %.3f" %corpus_STR)
- 
-Result:      
+STD: Semantic Travel Distance - An automatic evaluation metric for Machine
+Translation.
 
-    Reference: man sitting using tool at a table in his home.        
-    Hypothesis: The president comes to China       
-    STR score: 0.674      
-    Reference: vegetable is being sliced.       
-    Hypothesis: someone is slicing a tomato with a knife on a cutting board.      
-    STR score: 0.814      
-    Reference: a speaker presents some products       
-    Hypothesis: the speaker is introducing the new products on a fair.       
-    STR score: 0.788     
-    Corpus STR score: 0.758
- 
-    
+optional arguments:
+  -h, --help            show this help message and exit
+  -r REF, --ref REF     Reference file
+  -o HYP, --hyp HYP     Hypothesis file
+  -l LANG, --lang LANG  Language: en for English; cn for Chinese
+  -a1 ALPHA1, --alpha1 ALPHA1
+                        Weight of unigram STD score at segment level (Default:
+                        0.5)
+  -a2 ALPHA2, --alpha2 ALPHA2
+                        Weight of bigram STD score at segment level (Default:
+                        0.5)
+  -a3 ALPHA3, --alpha3 ALPHA3
+                        Weight of unigram STD score at syetem level (Default:
+                        0.3)
+  -a4 ALPHA4, --alpha4 ALPHA4
+                        Weight of bigram STD score at system level (Default:
+                        0.7)
+  -b1 BETA1, --beta1 BETA1
+                        Weight of semantic distance matrix (Default: 0.6)
+  -b2 BETA2, --beta2 BETA2
+                        Weight of n-gram order distance matrix (Default: 0.4)
+  -v, --verbose         Print score of each sentence (Default: False)
+       
