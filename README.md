@@ -15,8 +15,8 @@ English pretrained model:
 https://dl.fbaipublicfiles.com/fasttext/vectors-english/crawl-300d-2M.vec.zip
 
 ## Usage
-1. Set pretrained word embeddings model path in config.py
 <pre>
+1. Set pretrained word embeddings model path in config.py
 2. STD.py [-h] -r REF -o HYP -l LANG [-a1 ALPHA1] [-a2 ALPHA2]
               [-a3 ALPHA3] [-a4 ALPHA4] [-b1 BETA1] [-b2 BETA2] [-v]
 
@@ -29,17 +29,13 @@ optional arguments:
   -o HYP, --hyp HYP     Hypothesis file
   -l LANG, --lang LANG  Language: en for English; cn for Chinese
   -a1 ALPHA1, --alpha1 ALPHA1
-                        Weight of unigram STD score at segment level (Default:
-                        0.5)
+                        Weight of unigram STD score at segment level (Default: 0.5)
   -a2 ALPHA2, --alpha2 ALPHA2
-                        Weight of bigram STD score at segment level (Default:
-                        0.5)
+                        Weight of bigram STD score at segment level (Default: 0.5)
   -a3 ALPHA3, --alpha3 ALPHA3
-                        Weight of unigram STD score at syetem level (Default:
-                        0.3)
+                        Weight of unigram STD score at syetem level (Default: 0.3)
   -a4 ALPHA4, --alpha4 ALPHA4
-                        Weight of bigram STD score at system level (Default:
-                        0.7)
+                        Weight of bigram STD score at system level (Default: 0.7)
   -b1 BETA1, --beta1 BETA1
                         Weight of semantic distance matrix (Default: 0.6)
   -b2 BETA2, --beta2 BETA2
