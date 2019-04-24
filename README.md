@@ -27,7 +27,7 @@ https://dl.fbaipublicfiles.com/fasttext/vectors-english/crawl-300d-2M.vec.zip
    -o HYP, --hyp HYP     Hypothesis file        
    -l LANG, --lang LANG  Language: en for English; cn for Chinese        
    -a1 ALPHA1, --alpha1 ALPHA1        
-                        Weight of unigram STD score at segment level (Default: 0.5)          
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Weight of unigram STD score at segment level (Default: 0.5)          
    -a2 ALPHA2, --alpha2 ALPHA2          
                         Weight of bigram STD score at segment level (Default: 0.5)           
    -a3 ALPHA3, --alpha3 ALPHA3           
